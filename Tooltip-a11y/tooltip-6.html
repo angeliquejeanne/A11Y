@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooltip - qui se ferme avec echap</title>
+    <script>
+        // remove no-js and add 'js' to the HTML
+        document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+    </script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="demo-wrap">
+        <main aria-label="content">
+            <section>
+                <h2>
+                    Tooltip sur les boutons et les liens
+                </h2>
+                <div class="test">
+                    <h3>
+                        Tooltip généré à partir de l'attribut <code>title</code>
+                    </h3>
+                    <p>
+                        <span data-tooltip>
+                            <h3
+                                title="Maintenant, c'est un tooltip - infobulle personnalisé, cliquez pour en savoir plus"
+                                data-tooltip-trigger
+                                onClick="alert('En cliquant sur ok la popup se ferme mais pas que en utilisant la touche echap également! ');">
+                                Proposez un titre
+                            </h3>
+                        </span>
+                    </p>
+                </div>
+            </section>
+        </main>
+    </div>   
+    <script src="./script.js"></script> 
+    <script>
+        var selector = '[data-tooltip]';
+			var els = document.querySelectorAll(selector);
+
+			for ( var i = 0; i < els.length; i++ ) {
+				var dm = new ARIAtip( els[i] );
+			}
+    </script>
+</body>
+</html>
